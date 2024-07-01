@@ -1,0 +1,91 @@
+@charset "utf-8";
+/* CSS Document */
+*{
+    margin: 0;
+    padding: 0;
+}
+body {
+ 
+    background: #76be69;
+}
+ol,ul,li{
+    
+    list-style-type: none;
+}
+a{
+
+    font-size: 1.1em;
+    font-weight: bold;
+    color: rgba(13,150,3,1.00);
+    text-decoration: none;
+    transition: transform 2s ease;
+}
+nav{
+    /*width: 1300px;*/
+    height: 60px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    background: white;
+}
+nav>ul>li>a:hover{
+    color: #024855;
+}
+nav>img{
+    
+    height: 50px;
+    width: 100px;
+}
+nav>ul{
+  
+    width: 800px;
+    height: 50px;
+    line-height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+nav>ul>li{
+    height: 50px;
+    z-index: 1  ;
+}
+nav>ul>li:nth-child(3){
+    text-align: center;
+    font-size: 1.1em;
+    font-weight: bold;
+    color: rgb(53, 144, 172);
+    cursor: pointer;
+}
+nav>ul>li:nth-child(3):hover{
+    color: #024855;
+}
+nav>ul>li:nth-child(3)>.hidden{
+    height: 0;
+    overflow: hidden;
+    transition: all .5s linear;
+    background: rgba(255,255,255,0.3);
+    /*test*/
+    
+}
+nav>ul>li:nth-child(3)>.hidden>li{
+    height: 45px;
+}
+nav>ul>li:nth-child(3):hover>.hidden{
+    height: 180px;
+}
+nav>ul>li:nth-child(3)>ul>li:hover{
+    background: rgba(0,0,0,0.75);
+}
+
+
+#footer_wrapper {
+	width: 100%;
+	background: #76be69;
+	border-top: 5px solid #ffffff
+}
+#footer {
+	width: 960px;
+	padding: 30px 10px;
+	margin: 0 auto;
+	text-align: center;
+}

@@ -1,0 +1,322 @@
+<!doctype html>
+<html><head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<link href="common.css" rel="stylesheet" type="text/css" />
+<style>
+        /* 定义名为 "wrap" 的类的样式，包括宽度、高度、相对定位 */
+      .wrap {
+            width: 800px;
+            height: 400px;
+            position: relative;
+        }
+
+        /* 定义名为 "list" 的类的样式，包括宽度、高度、相对定位、左边距为 0 */
+      .list {
+            width: 800px;
+            height: 400px;
+            position: relative;
+            padding-left: 0px;
+        }
+
+        /* 定义名为 "item" 的类的样式，包括宽度、高度、无列表样式、绝对定位、左边为 0、透明度为 0、过渡效果 */
+      .item {
+            width: 100%;
+            height: 100%;
+            list-style: none;
+            position: absolute;
+            left: 0;
+            opacity: 0;
+            transition: all.8s;
+        }
+
+        /* 为第 1 个子元素设置背景图片 */
+      .item:nth-child(1) {
+            background-image: url(images/5.jpg);
+        }
+
+        /* 为第 2 个子元素设置背景图片 */
+      .item:nth-child(2) {
+            background-image: url(images/6.jpg);
+        }
+
+        /* 为第 3 个子元素设置背景图片 */
+      .item:nth-child(3) {
+            background-image: url(images/9.jpg);
+        }
+
+        /* 为第 4 个子元素设置背景图片 */
+      .item:nth-child(4) {
+            background-image: url(images/60.jpg);
+        }
+
+        /* 为第 5 个子元素设置背景图片 */
+      .item:nth-child(5) {
+            background-image: url(images/62.jpg);
+        }
+
+        /* 当元素具有 "active" 类时，设置其样式，包括 z-index 和透明度 */
+      .item.active {
+            z-index: 10;
+            opacity: 1;
+        }
+
+        /* 定义名为 "btn" 的类的样式，包括宽度、高度、z-index、绝对定位、顶部位置 */
+      .btn {
+            width: 60px;
+            height: 100px;
+            z-index: 100;
+            top: 150px;
+            position: absolute;
+        }
+
+        /* 定义 ID 为 "leftBtn" 的元素的样式，包括左边位置 */
+        #leftBtn {
+            left: 0px;
+        }
+
+        /* 定义 ID 为 "rightBtn" 的元素的样式，包括右边位置 */
+        #rightBtn {
+            right: 0px;
+        }
+
+        /* 定义名为 "pointList" 的类的样式，包括无列表样式、左边距为 0、绝对定位、右边和底部位置、z-index */
+      .pointList {
+            list-style: none;
+            padding-left: 0px;
+            position: absolute;
+            right: 20px;
+            bottom: 20px;
+            z-index: 200;
+        }
+
+        /* 定义名为 "point" 的类的样式，包括宽度、高度、背景颜色、圆角、浮动、外边距、边框样式、鼠标指针样式 */
+      .point {
+            width: 10px;
+            height: 10px;
+            background-color: antiquewhite;
+            border-radius: 100%;
+            float: left;
+            margin-right: 8px;
+            border-style: solid;
+            border-width: 2px;
+            border-color: slategray;
+            cursor: pointer;  
+        }
+
+        /* 当元素具有 "active" 类时，设置其背景颜色 */
+      .point.active{
+            background-color: cadetblue;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 页面主体内容开始 -->
+    <div class="logo">
+        <img src="images/logo.jpg" alt="">
+        <!-- 显示一个带有 "logo" 类的图片 -->
+    </div>
+    <div id="header_wrapper">
+        <div id="header">
+            <div id="menu" class="ddsmoothmenu">
+                <ul>
+                    <li><a href="饮茶思源.html">首页</a></li>
+                    <li><a href="雨花茶.html">雨花茶</a></li>
+                    <li><a href="体验过程.html">体验过程</a></li>
+                    <li><a href="非遗大师.html">非遗大师</a></li>
+                    <li><a href="未来发展.html">未来发展</a></li>
+                    <li><a href="关于我们.html">关于我们</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="slider_wrapper">
+        <div id="slider">
+            <div id="focus">
+                <ul>
+                    <div class="wrap">
+                        <ul class="list">
+                            <li class="item active">0</li>
+                            <li class="item">1</li>
+                            <li class="item">2</li>
+                            <li class="item">3</li>
+                            <li class="item">4</li>
+                        </ul>
+                        <ul class="pointList">
+                            <li class="point active" data-index = "0"></li>
+                            <li class="point" data-index = "1"></li>
+                            <li class="point" data-index = "2"></li>
+                            <li class="point" data-index = "3"></li>
+                            <li class="point" data-index = "4"></li>
+                        </ul>
+                        <button class="btn" id="leftBtn"> < </button> 
+                        <button class="btn" id="rightBtn"> > </button>
+                    </div>
+                </ul>
+                <script>
+                    // 获取所有具有 "item" 类的元素
+                    var items = document.querySelectorAll(".item");
+                    // 获取所有具有 "point" 类的元素
+                    var points = document.querySelectorAll(".point")
+                    // 获取 ID 为 "leftBtn" 的元素
+                    var left = document.getElementById("leftBtn");
+                    // 获取 ID 为 "rightBtn" 的元素
+                    var right = document.getElementById("rightBtn");
+                    // 获取具有 "wrap" 类的元素
+                    var all = document.querySelector(".wrap")
+                    // 初始化索引为 0
+                    var index = 0;
+                    // 初始化时间为 0
+                    var time = 0;
+
+                    // 定义一个函数，用于清除所有元素的 "active" 类
+                    var clearActive = function () {
+                        for (i = 0; i < items.length; i++) {
+                            items[i].className = 'item';
+                        }
+                        for (j = 0; j < points.length; j++) {
+                            points[j].className = 'point';
+                        }
+                    }
+
+                    // 定义一个函数，根据当前索引设置相应元素的 "active" 类
+                    var goIndex = function () {
+                        clearActive();
+                        items[index].className = 'item active';
+                        points[index].className = 'point active'
+                    }
+
+                    // 定义向左切换的函数
+                    var goLeft = function () {
+                        if (index == 0) {
+                            index = 4;
+                        } else {
+                            index--;
+                        }
+                        goIndex();
+                    }
+
+                    // 定义向右切换的函数
+                    var goRight = function () {
+                        if (index < 4) {
+                            index++;
+                        } else {
+                            index = 0;
+                        }
+                        goIndex();
+                    }
+
+                    // 为左按钮添加点击事件，点击时向左切换并重置时间
+                    left.addEventListener('click', function () {
+                        goLeft();
+                        time = 0;
+                    })
+
+                    // 为右按钮添加点击事件，点击时向右切换并重置时间
+                    right.addEventListener('click', function () {
+                        goRight();
+                        time = 0;
+                    })
+
+                    // 为每个点添加点击事件，点击时根据数据属性设置索引并切换
+                    for(i = 0;i < points.length;i++){
+                        points[i].addEventListener('click',function(){
+                            var pointIndex = this.getAttribute('data-index')
+                            index = pointIndex;
+                            goIndex();
+                            time = 0;
+                        })
+                    }
+                    // 定义一个定时器函数
+                    var timer;
+                    function play(){
+                        timer = setInterval(() => {
+                            time ++;
+                            if(time == 20 ){
+                                goRight();
+                                time = 0;
+                            }    
+                        },100)
+                    }
+                    // 启动定时器
+                    play();
+                    // 当鼠标在 "wrap" 元素上移动时，清除定时器
+                    all.onmousemove = function(){
+                        clearInterval(timer)
+                    }   
+                    // 当鼠标离开 "wrap" 元素时，重新启动定时器
+                    all.onmouseleave = function(){
+                        play();
+                    }
+                </script>
+            </div>
+        </div>
+    </div>
+    <div>
+        <div id="main">
+            <div class="homepage_post col half float_l">
+                <img src="images/65.jpg" width="450" height="300" />
+                <!-- 显示一张图片 -->
+
+                <h2 align="left">雨花茶</h2>
+                <!-- 标题 -->
+                <br>
+                <hr color="#76be69"  align="left" size="10" width="450" />
+                <!-- 水平分割线 -->
+                <p>雨花茶是南京的特产，属于绿茶类，是中国经典名茶之一，被誉为“中国十大名茶”之一。 它以其独特的制作工艺和优良的品质特征而闻名。雨花茶的种植历史可以追溯到唐代，陆羽的《茶经》中就有记载。这种茶在清明前采摘，只选一芽一叶的芽叶，经过杀青、揉捻、整形干燥等工序，其中手工炒制是雨花茶制作的重要环节，每锅只能炒制250克茶。雨花茶的外形紧细圆直，形如松针，色泽翠绿，白毫显露，香气高雅，滋味鲜醇，汤色清澈，叶底嫩绿明亮。冲泡后，芽叶直立，上下沉浮，犹如翡翠，清香四溢，品饮一杯，沁人肺腑，齿颊留香</p>
+             
+
+                <p>雨花茶不仅是一种高品质的茶叶，还承载着丰富的文化内涵。它是南京城市文化的一张名片，象征着革命先烈万古长青的精神。雨花茶的制作技艺是国家级非物质文化遗产，至今已拥有六代传承体系，完整保留了传统工艺。南京雨花茶的制作技艺包括采茶、摊放、杀青、揉捻、整形干燥、筛分等多个步骤，每个步骤都有严格的要求和标准，以确保茶叶的品质和口感。</p>
+            
+
+                <p>此外，雨花茶的饮用和贮存也有其特定的方式。一般选用透明玻璃杯或盖碗进行冲泡，采用“上投法”，即先向杯中注入约七分满的开水，待水温凉至80℃左右时，再进行投茶。在储存方面，雨花茶忌潮湿、忌高温、忌氧气、忌异味，一般可采用塑料袋、铝箔袋贮存法、金属罐装贮存法以及低温贮存法来保持其品质。。</p>
+              
+
+                <p>雨花茶的历史典故和制作技艺体现了南京深厚的茶文化和制茶智慧。作为南京的代表性茶叶，雨花茶不仅是一种高品质的饮品，更是南京乃至中国茶文化的重要组成部分。</p>
+            
+            </div>
+            <div class="col half float_r">
+                <br>
+
+                <hr color="#76be69"  align="left" size="10" width="450" />
+                <!-- 水平分割线 -->
+                <img src="images/44.jpg" class="image_fl imgage-with-frame" width="450" height="200" />
+                <br>
+                <br>
+                <a href="#" target="_parent">1识：雨花茶外形挺俊，色泽幽绿，条索紧直，锋苗挺秀，带有白毫，干茶香气浓郁。<br><br><br></a>
+                <a href="#" target="_parent">2泡：最宜使用直简玻璃杯冲泡，水温80-90°℃ 可以使用上投法，也可以使用中投法。第一泡冲泡时间1-2分钟。<br><br></a>
+                <br>
+                <a href="#" target="_parent">3品：冲泡后，香气清雅，如清月照林意味深远。<br><br></a>
+                <br>
+                <a href="#" target="_parent">茶汤绿透银光，毫毛丰盛。滋味醇和，回味持久。<br><br></a>
+                <br>            
+                <hr color="#76be69" align="left" size="10" width="450" />
+                <br>
+            </div>
+            <video autoplay loop id="video" x-webkit-airplay="true" webkit-playsinline="true" muted width="450" height="220">
+                <source src="video/雨花茶.mp4" type="video/mp4" >
+            </video>
+            <!-- 自动播放、循环的视频 -->
+            <div class="cleaner" ></div>
+            <div>
+                <div>
+                    <p>茶</p>
+                </div>
+                <hr color="#76be69"  align="left" size="10" width="950" />
+                <!-- 水平分割线 -->
+
+                <div class="col one_fourth"> <img src="images/63.jpg" width="230" height="185" /> </div>
+                <div class="col one_fourth fp_rw"> <img src="images/64.jpg" width="230" height="185" /> </div>
+                <div class="col one_fourth fp_rw"> <img src="images/66.jpg" width="230" height="185" /> </div>
+                <div class="col one_fourth fp_rw "> <img src="images/19.jpg" width="230" height="185" /> </div>
+            </div>
+            <div class="cleaner"></div>
+        </div>
+    </div>
+    <div id="footer_wrapper">
+		<div id="footer"> 饮茶思源 © “寻茶·探忆·发扬”实践队</div>
+        <!-- 页脚信息 -->
+    </div>
+</body>
+</html>

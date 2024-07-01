@@ -1,0 +1,170 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>体验过程</title>
+<link href="体验.css" rel="stylesheet" type="text/css">
+<link href="过程.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+ <nav>
+        <img src="images/logo.jpg" alt="">
+        <ul>
+            <li><a href="饮茶思源.html">首页</a></li>
+            <li><a href="雨花茶.html">雨花茶</a></li>
+            <li><a href="体验过程.html">体验过程</a></li>
+            <li><a href="非遗大师.html">非遗传承人</a></li>
+            <li><a href="未来发展.html">未来发展</a></li>
+            <li><a href="关于我们.html">关于我们</a></li>
+         </ul>
+    </nav>
+
+    <section>
+        <ul>
+            <li><img src="images/34.jpg" alt=""></li>
+            <li><img src="images/68.jpg" alt=""></li>
+            <li><img src="images/72.jpg" alt=""></li>
+            <li><img src="images/45.jpg" alt=""></li>
+            <li><img src="images/61.jpg" alt=""></li>
+            <li><img src="images/59.jpg" alt=""></li>
+        </ul>
+    </section>
+
+    <main>
+        <div class="top">
+            <ul>
+                <li>
+                    <span class="iconfont icon-dongman"></span>
+                    <h4>采茶</h4>
+                    <p>采茶时节至，茶农忙不迭。绿叶丛中寻嫩芽，巧手轻摘入竹篮。茶香四溢满山间，传承千年技艺传。</p>
+                </li>
+                <li>
+                    <span class="iconfont icon-dongman1"></span>
+                    <h4>炒茶</h4>
+                    <p>炒茶工艺精，火候把控严。叶翻卷舒展间，香飘四溢醉心田。古法今传技艺高，一杯清茗韵味添。</p>
+                </li>
+                <li>
+                    <span class="iconfont icon-dongman2"></span>
+                    <h4>制茶</h4>
+                    <p>制茶工艺深，匠心独运间。绿叶经揉捻，香韵渐释放。传承古法，品味千年茶韵，一杯清茗话文化。</p>
+                </li>
+            </ul>
+        </div>
+        <div class="second">
+        
+            <div>
+                <img src="images/43.jpg" alt="">
+                <div>
+                    <ul>
+                        <li>
+                            <p>踏上茶园的土地，仿佛置身于绿色的海洋。指尖轻触茶叶，采摘的不仅是自然的精华，更是一份宁静与美好。</p><br>
+
+                            <p>走进炒茶的工坊，热浪扑面而来，却挡不住对茶香的期待。双手翻炒，茶叶在锅中跳跃，如同舞动的精灵。见证茶叶从嫩绿到香醇的蜕变，这是一场与时间和温度的较量。</p>
+                          
+                        </li><br><br><br>
+
+
+                        <li>
+                           <br><br><br>
+                            <p>炒茶的炉灶燃起，杀青的时刻来临，茶叶在高温中翻滚，青涩渐渐褪去，醇香缓缓袭来。</p><br>
+
+                            <p> 制茶，是艺术，更是心灵的修行。这不仅是一次对传统工艺的体验，更是一次与自然对话、与历史交融的奇妙旅程。在茶香四溢中，品味着劳动的甘甜，领略着生活的美好。</p>
+                            
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="last">
+            <h4>精彩瞬间</h4>
+            <ul>
+                <li><a href="#" title=" " target="_blank"><img src="images/精彩1.jpg" alt=""></a></li>
+                <li><a href="#" title=" " target="_blank"><img src="images/29.jpg" alt=""></a></li>
+                <li><a href="#" title=" " target="_blank"><img src="images/33.jpg" alt=""></a></li>
+                <li><a href="#" title=" " target="_blank"><img src="images/28.jpg" alt=""></a></li>
+            </ul>
+        </div>
+    </main>
+    <div id="footer_wrapper">
+        <div id="footer"> 饮茶思源 © “寻茶·探忆·发扬”实践队</div>
+
+    <script>
+
+        var imgs = document.querySelectorAll("section>ul>li")//获取图片盒子——结果为数组
+        console.log(imgs)
+        var len = imgs.length//图片数量
+
+        var current = 0//初始主图片下标
+        var timer//定时器的返回值
+
+        change()
+        bind()
+        autoplay()
+
+        //改变主图片函数
+        function change() {
+            //将图片分为左右两边两组——每组数量
+            var mlen = Math.floor(len / 2)
+            for (var i = 0; i < mlen; i++) {
+                //获取主图片左右两边的图片的下标
+                //注：当图片数为偶数时会出现一个limg=rimg的情况
+                var limg = len + current - i - 1
+                var rimg = current + i + 1
+                if (limg >= len) {
+                    limg -= len
+                }
+                if (rimg >= len) {
+                    rimg -= len
+                }
+
+                //给主图片左右两边的图片设置transform
+                if (rimg != limg) {
+                    imgs[limg].style.transform = 'translateX(' + (-200) * (i + 1) + 'px) translateZ(' + (200 - i * 100) + 'px) rotateY(30deg) scale(' + (1 - (0.1 * (i + 1))) + ')'
+                    imgs[rimg].style.transform = 'translateX(' + (200) * (i + 1) + 'px) translateZ(' + (200 - i * 100) + 'px) rotateY(-30deg) scale(' + (1 - (0.1 * (i + 1))) + ')'
+                }
+                else {
+                    //给当rimg=limg这种特殊情况下的transform
+                    imgs[limg].style.transform = 'translateZ(0px)'
+                }
+                //设置主图片的transform
+                imgs[current].style.transform = 'translateZ(300px)'
+
+            }
+        }
+
+        //设置绑定
+        function bind() {
+            //获取点击图片的下标——并赋值给current（主图片下标）然后调用change函数
+            for (var i = 0; i < len; i++) {
+                (function (i) {
+                    imgs[i].onclick = function () {
+                        current = i;
+                        change();
+                    }
+                })(i);
+                //当鼠标移入图片时定时器停止
+                imgs[i].onmouseenter = function () {
+                    clearInterval(timer);
+                }
+                //当鼠标移除图片时开启定时器——autoplay是下面封装定时器的函数
+                imgs[i].onmouseout = function () {
+                    autoplay();
+                }
+            }
+        }
+        //封装定时器
+        function autoplay() {
+            timer = setInterval(function () {
+                if (current >= len - 1) {
+                    current = 0;
+                } else {
+                    current++;
+                }
+                change();
+            }, 2000)
+        }
+    </script>
+</body>
+</html>

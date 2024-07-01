@@ -1,0 +1,214 @@
+@charset "utf-8";
+/* CSS Document */
+body {
+	margin: 0;
+	padding: 0;
+	color: #583f50;
+	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+	font-size: 12px;
+	line-height: 1.4em; 
+	background-color: #faf8ec; 
+}
+.logo {
+    display: flex;
+    align-items: center;
+}
+ 
+.logo img {
+    height: 80px;
+}
+ 
+.logo h1 {
+    margin-left: 20px;
+    font-size: 36px;
+    font-weight: bold;
+}
+a, a:link, a:visited { 
+	color: #ff5454; 
+	font-weight: normal; 
+	text-decoration: none; 
+}
+
+
+.cleaner { clear: both }
+
+
+.float_l { float: left }
+.float_r { float: right }
+
+#miaosha {	
+	color: #ff5454; 
+	font-size: 30px;
+	text-align: center;
+}
+#denglu {	
+	color: #000000; 
+	font-size: 19px;
+	text-align: center;
+}
+
+#header_wrapper {
+	width: 100%;
+	height: 140px;
+	background: url(imgages/header.jpg)repeat-x
+}
+#header {
+	width: 960px;
+	padding: 0 10px;
+	margin: 0 auto;
+}
+
+#slider_wrapper {
+	width: 100%;
+	height: 446px;
+	background: #76be69 url(images/images/23.jpg)no-repeat center top
+}
+
+#slider {
+	width: 960px;
+	padding: 33px 10px;
+	height: 446px;
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+#main {
+	width: 960px;
+	padding:10px; padding-top:30px;
+	margin: 0 auto;
+}
+
+#footer_wrapper {
+	width: 100%;
+	background: #76be69;
+	border-top: 5px solid #ffffff
+}
+#footer {
+	width: 960px;
+	padding: 30px 10px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+#site_title { 
+	float: left; 
+}
+
+#site_title a { 
+	margin-top: 50px; 
+	display: block; 
+	font-size: 12px; 
+	font-family: Georgia, "Times New Roman", Times, serif; 
+	width: 240px; 
+	height: 54px; 
+	color: #acacac; 
+	text-indent: -10000px; 
+	background: url(imgages/logo.jpg)center left; 
+}
+
+#menu { float: right }
+.gallery_box { 
+	float: left; 
+	width: 220px; 
+	margin: 0 20px 20px 0; 
+	text-align: center; 
+}
+
+#contact_form { 
+	padding: 0; 
+	width: 410px; 
+	margin-bottom: 40px; 
+}
+
+#contact_form form .input_field { 
+	width: 270px; 
+	padding: 5px; 
+	color: #222;  
+	background: #fff; 
+	border: 1px solid #ded6c6; 
+	font-size: 12px;
+	font-family: Tahoma, Geneva, sans-serif;
+	margin-top: 5px;
+}
+
+#contact_form form label { 
+	display: block; 
+	width: 100px; 
+	margin-right: 12px; 
+	font-size: 12px; 
+}
+
+#contact_form form textarea { 
+	width: 398px; 
+	height: 200px; 
+	padding: 5px; 
+	color: #222; 
+	background: #fff; 
+	border: 1px solid #ded6c6; 
+	font-size: 12px;
+	font-family: Tahoma, Geneva, sans-serif;
+	margin-top: 5px;
+}
+
+#contact_form form textarea  { 
+	padding: 5px 14px; 
+	font-weight: bold;
+	background: #fff; 
+	border: 1px solid #ded6c6; 
+	color: #222; 
+	font-size:12px; 
+	margin-top: 10px;
+}	
+
+.col { float: left; margin: 0 20px 20px 0 }
+.half { width: 460px }
+#sidebar, .one_third { width: 300px }
+#content, .two-third { width: 980px }
+.padding_right { padding-right: 20px }
+.one_fourth { width: 220px }
+.no_margin_right { margin-right: 0 }
+.last_box { margin-bottom: 0; background: none }
+
+.ddsmoothmenu{
+	margin-top: 65px
+}
+
+.ddsmoothmenu ul{
+	z-index:100;
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+.ddsmoothmenu ul li{
+	position: relative;
+	display: inline;
+	float: left;
+}
+
+.ddsmoothmenu ul li a {
+	display: block;
+	height: 28px;
+	width: 82px;
+	margin-left: 10px;
+	line-height: 30px;
+	font-size: 13px;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	color: #514d34;	
+	text-align: center;
+	text-decoration: none;
+	font-weight: 400;
+	outline: none;
+}
+
+.ddsmoothmenu ul li a.selected, .ddsmoothmenu ul li a:hover { 
+	background: #bb3a33;
+	color: #fff
+}
+
+#focus {width:940px; height:440px; margin:auto; overflow:hidden; position:relative; margin-top:-40px; margin-left:0px;}
+#focus ul li img {width:940px; height:440px;}
+#focus .btnBg {position:absolute; width:980px; height:20px; left:0; bottom:0;}
+#focus .preNext {width:45px; height:100px; position:absolute; top:90px; background:url(img/sprite.png) no-repeat 0 0; cursor:pointer;}
+#focus .pre {left:0;}
+#focus .next {right:0; background-position:right top;}
